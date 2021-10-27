@@ -1,12 +1,18 @@
-# Concurrent TaskManager & EventSystem
+# Cursa Core
 
-A utility using thread pool to execute concurrent tasks
+A collection of
 
-Including runBlocking() addDelayTask() runRepeat() launch() repeat() runTiming()
+1.ConcurrentTaskManager(Including runBlocking() addDelayTask() runRepeat() launch() repeat() runTiming() )
+
+2.EventSystem(Decentralized and parallel runnable)
+
+3.Settings and config container
+
+4.Another utilities
 
 ## How to use ?
 
-### EventSystem
+### EventSystem(Centralized)
 
 A parallel runnable event system
 
@@ -50,13 +56,13 @@ public class TestObject {
         System.out.println("Highest " + event.message);
     }
 
-    @Listener(priority = Priority.PARALLEL)
+    @ParallelListener(priority = Priority.HIGHEST)
     public void onEventParallel(TestEvent event) {
         System.out.println("Parallel " + event.message);
     }
 
 }
-```   
+```
 
 ### Launch
 
@@ -140,7 +146,7 @@ public class Test {
 }
 ```
 
-### runRepeat
+### RunRepeat
 
 Running a scheduled repeat task
 
@@ -193,7 +199,7 @@ public class Test {
 }
 ```
 
-### repeat
+### Repeat
 
 Running repeat task in calling thread
 
@@ -214,7 +220,7 @@ public class Test {
 }
 ```
 
-### rumTiming
+### RumTiming
 
 Record the time spent on a task
 
